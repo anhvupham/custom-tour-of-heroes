@@ -39,7 +39,7 @@ System.register(["angular2/core", "../services/hero/hero.service"], function(exp
                 NewHeroComponent = __decorate([
                     core_1.Component({
                         selector: "new-hero",
-                        template: "\n\t\t<h3>Create new hero</h3>\n\t\t<input #name (keyup.enter)=\"create(name.value)\" />\n\t\t<button (click)=\"create(name.value)\">Create</button>\n\t\t"
+                        template: "\n\t\t<h3>Create new hero</h3>\n\t\t<input #name (keyup.enter)=\"create(name.value)\" class=\"form-control\" />\n\t\t<button (click)=\"create(name.value)\" class=\"btn btn-default\">Create</button>\n\t\t"
                     }), 
                     __metadata('design:paramtypes', [hero_service_1.HeroService])
                 ], NewHeroComponent);

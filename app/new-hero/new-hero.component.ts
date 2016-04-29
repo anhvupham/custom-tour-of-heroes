@@ -6,8 +6,8 @@ import {Hero} from "../classes/hero/hero";
     selector: "new-hero",
     template: `
 		<h3>Create new hero</h3>
-		<input #name (keyup.enter)="create(name.value)" />
-		<button (click)="create(name.value)">Create</button>
+		<input #name (keyup.enter)="create(name.value)" class="form-control" />
+		<button (click)="create(name.value)" class="btn btn-default">Create</button>
 		`
 })
 
@@ -22,7 +22,7 @@ export class NewHeroComponent {
                 id: id,
                 name: name
             };
-			this._heroService.newHero(newhero);
+            this._heroService.newHero(newhero);
         });
     }
 }
