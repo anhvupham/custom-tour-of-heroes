@@ -1,21 +1,25 @@
-System.register([], function(exports_1, context_1) {
+System.register(["../classes/hero/hero"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
+    var hero_1;
     var HEROES;
     return {
-        setters:[],
+        setters:[
+            function (hero_1_1) {
+                hero_1 = hero_1_1;
+            }],
         execute: function() {
             exports_1("HEROES", HEROES = [
-                { "id": 11, "name": "Mr. Nice" },
-                { "id": 12, "name": "Narco" },
-                { "id": 13, "name": "Bombasto" },
-                { "id": 14, "name": "Celeritas" },
-                { "id": 15, "name": "Magneta" },
-                { "id": 16, "name": "RubberMan" },
-                { "id": 17, "name": "Dynama" },
-                { "id": 18, "name": "Dr IQ" },
-                { "id": 19, "name": "Magma" },
-                { "id": 20, "name": "Tornado" }
+                new hero_1.Hero(11, "Mr. Nice"),
+                new hero_1.Hero(12, "Narco"),
+                new hero_1.Hero(13, "Bombasto"),
+                new hero_1.Hero(14, "Celeritas"),
+                new hero_1.Hero(15, "Magneta"),
+                new hero_1.Hero(16, "RubberMan"),
+                new hero_1.Hero(17, "Dynama"),
+                new hero_1.Hero(18, "Dr IQ"),
+                new hero_1.Hero(19, "Magma"),
+                new hero_1.Hero(20, "Tornado")
             ]);
         }
     }

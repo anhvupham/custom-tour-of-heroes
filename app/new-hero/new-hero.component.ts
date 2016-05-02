@@ -18,11 +18,8 @@ export class NewHeroComponent {
     create(name: string) {
         this._heroService.getHeroes().then(heroes => {
             let id = heroes[heroes.length - 1].id + 1;
-            let newhero: Hero = {
-                id: id,
-                name: name
-            };
-            this._heroService.newHero(newhero);
+            // let newhero = new Hero(id, name);
+            // this._heroService.newHero(newhero);
         });
     }
 }
