@@ -26,14 +26,13 @@ System.register(["angular2/core", "../services/hero/hero.service"], function(exp
                     this._heroService = _heroService;
                 }
                 NewHeroComponent.prototype.create = function (name) {
-                    var _this = this;
                     this._heroService.getHeroes().then(function (heroes) {
                         var id = heroes[heroes.length - 1].id + 1;
-                        var newhero = {
-                            id: id,
-                            name: name
-                        };
-                        _this._heroService.newHero(newhero);
+                        // let newhero: Hero = {
+                        //     id: id,
+                        //     name: name
+                        // };
+                        // this._heroService.newHero(newhero);
                     });
                 };
                 NewHeroComponent = __decorate([

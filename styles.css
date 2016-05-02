@@ -17,6 +17,14 @@ body, input[text], button {
   font-family: Cambria, Georgia;
 }
 
+.ng-valid[required] {
+  border-left: 5px solid #42A948!important; /* green */
+}
+
+.ng-invalid {
+  border-left: 5px solid #a94442!important; /* red */
+}
+
 /*
  * See https://github.com/angular/angular.io/blob/master/public/docs/_examples/styles.css
  * for the full set of master styles used by the documentation samples
