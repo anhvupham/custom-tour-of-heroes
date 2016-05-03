@@ -3,14 +3,12 @@ import {Hero} from "../classes/hero/hero"
 import {HeroDetailComponent} from "../hero-detail/hero-detail.component";
 import {HeroService} from "../services/hero/hero.service"
 import {Router} from "angular2/router";
-import {NewHeroComponent} from "../new-hero/new-hero.component";
 
 
 @Component({
     selector: 'my-heroes',
     templateUrl: "app/heroes/heroes.component.html",
     styleUrls: ["app/heroes/heroes.component.css"],
-	directives: [NewHeroComponent]
 })
 
 export class HeroesComponent implements OnInit {

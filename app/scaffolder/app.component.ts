@@ -5,6 +5,7 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router'
 import {DashboardComponent} from "../dashboard/dashboard.component"
 import {HeroDetailComponent} from "../hero-detail/hero-detail.component";
 import {HeroFormComponent} from "../hero-form/hero-form.component";
+import {LoggerService} from "../services/logger/logger.service";
 
 @Component({
     selector: "my-app",
@@ -21,7 +22,7 @@ import {HeroFormComponent} from "../hero-form/hero-form.component";
 		`,
     styleUrls: ["app/scaffolder/app.component.css"],
     directives: [ROUTER_DIRECTIVES],
-    providers: [HeroService, ROUTER_PROVIDERS]
+    providers: [HeroService, ROUTER_PROVIDERS, LoggerService]
 })
 
 @RouteConfig([

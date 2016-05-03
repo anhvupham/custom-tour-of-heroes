@@ -1,4 +1,4 @@
-System.register(["angular2/core", "../../data/mock-heroes"], function(exports_1, context_1) {
+System.register(["angular2/core", "../../data/mock-heroes", "../logger/logger.service"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", "../../data/mock-heroes"], function(exports_1,
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, mock_heroes_1;
+    var core_1, mock_heroes_1, logger_service_1;
     var HeroService;
     return {
         setters:[
@@ -19,15 +19,21 @@ System.register(["angular2/core", "../../data/mock-heroes"], function(exports_1,
             },
             function (mock_heroes_1_1) {
                 mock_heroes_1 = mock_heroes_1_1;
+            },
+            function (logger_service_1_1) {
+                logger_service_1 = logger_service_1_1;
             }],
         execute: function() {
             HeroService = (function () {
-                function HeroService() {
+                function HeroService(_logger) {
+                    this._logger = _logger;
                 }
                 HeroService.prototype.getHeroes = function () {
+                    this._logger.log("getHeroes");
                     return Promise.resolve(mock_heroes_1.HEROES);
                 };
                 HeroService.prototype.getHeroesSlowly = function () {
+                    this._logger.log("getHeroesSlowly");
                     return new Promise(function (resolve) {
                         return setTimeout(function () { return resolve(mock_heroes_1.HEROES); }, 2000);
                     } // 2 seconds
@@ -35,14 +41,20 @@ System.register(["angular2/core", "../../data/mock-heroes"], function(exports_1,
                     );
                 };
                 HeroService.prototype.getHero = function (id) {
+                    this._logger.log("getHero");
                     return Promise.resolve(mock_heroes_1.HEROES).then(function (heroes) { return heroes.filter(function (hero) { return hero.id === id; })[0]; });
                 };
                 HeroService.prototype.newHero = function (hero) {
+                    this._logger.log("newHero");
                     mock_heroes_1.HEROES.push(hero);
+                };
+                HeroService.prototype.updateHero = function (hero) {
+                    var existedHero = mock_heroes_1.HEROES.filter(function (h) { return h.id === hero.id; })[0];
+                    existedHero = hero;
                 };
                 HeroService = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [logger_service_1.LoggerService])
                 ], HeroService);
                 return HeroService;
             }());

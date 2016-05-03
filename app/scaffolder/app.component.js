@@ -1,4 +1,4 @@
-System.register(["angular2/core", "../heroes/heroes.component", "../services/hero/hero.service", 'angular2/router', "../dashboard/dashboard.component", "../hero-detail/hero-detail.component", "../hero-form/hero-form.component"], function(exports_1, context_1) {
+System.register(["angular2/core", "../heroes/heroes.component", "../services/hero/hero.service", 'angular2/router', "../dashboard/dashboard.component", "../hero-detail/hero-detail.component", "../hero-form/hero-form.component", "../services/logger/logger.service"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", "../heroes/heroes.component", "../services/her
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, heroes_component_1, hero_service_1, router_1, dashboard_component_1, hero_detail_component_1, hero_form_component_1;
+    var core_1, heroes_component_1, hero_service_1, router_1, dashboard_component_1, hero_detail_component_1, hero_form_component_1, logger_service_1;
     var AppComponent;
     return {
         setters:[
@@ -34,6 +34,9 @@ System.register(["angular2/core", "../heroes/heroes.component", "../services/her
             },
             function (hero_form_component_1_1) {
                 hero_form_component_1 = hero_form_component_1_1;
+            },
+            function (logger_service_1_1) {
+                logger_service_1 = logger_service_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -46,7 +49,7 @@ System.register(["angular2/core", "../heroes/heroes.component", "../services/her
                         template: "\n    <div class=\"container\">\n  \t\t<h1>{{title}}</h1>\n  \t    <nav>\n  \t  \t\t  <a [routerLink]=\"['Heroes']\">Heroes</a>\n  \t      \t<a [routerLink]=\"['Dashboard']\">Dashboard</a>\n            <a [routerLink]=\"['HeroForm']\">Hero Form</a>\n  \t    </nav>\n  \t\t<router-outlet></router-outlet>\n    </div>\n\t\t",
                         styleUrls: ["app/scaffolder/app.component.css"],
                         directives: [router_1.ROUTER_DIRECTIVES],
-                        providers: [hero_service_1.HeroService, router_1.ROUTER_PROVIDERS]
+                        providers: [hero_service_1.HeroService, router_1.ROUTER_PROVIDERS, logger_service_1.LoggerService]
                     }),
                     router_1.RouteConfig([
                         {
